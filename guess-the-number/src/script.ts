@@ -1,5 +1,3 @@
-"use strict";
-
 let numberDisplayBoxSelector: any = document.querySelector(".number");
 let highScoreSelector: any = document.querySelector(".highscore");
 let currentScoreSelector: any = document.querySelector(".guess");
@@ -21,11 +19,11 @@ const displayMsg = (msg: string): void => {
 const updateScore = (score: string): void => {
     scoreSelector.textContent = score;
 };
-const changeBgStyle = (styleValue: string) => {
+const changeBgStyle = (styleValue: string): void => {
     bodySelector.style.backgroundColor = styleValue;
 };
 
-checkBtnSelector.addEventListener("click", function () {
+checkBtnSelector.addEventListener("click", function (): void {
     const currentInputValue = Number(currentScoreSelector.value);
 
     if (!currentInputValue) {
@@ -52,7 +50,7 @@ checkBtnSelector.addEventListener("click", function () {
     }
 });
 
-againBtnSelector.addEventListener("click", function () {
+againBtnSelector.addEventListener("click", function (): void {
     gameScore = 20;
     scoreSelector.textContent = String(gameScore);
     currentScoreSelector.value = "";
